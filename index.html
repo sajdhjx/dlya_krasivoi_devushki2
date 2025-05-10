@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Для Лерки</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 24px;
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e6004d;
+    }
+
+    /* Всплывающее окно */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255,240,245,0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .popup.show {
+      display: flex;
+    }
+
+    .text {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .heart {
+      position: relative;
+      width: 260px;
+      height: 240px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 240px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -130px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 130px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.15); }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn" onclick="document.querySelector('.popup').classList.add('show')">
+    для лерки 💕
+  </button>
+
+  <div class="popup">
+    <div class="text">ТЫ ОЧЕНЬ КРАСИВАЯ</div>
+    <div class="heart"></div>
+  </div>
+
+</body>
+</html>
